@@ -2,8 +2,7 @@
 
 ## Objective
 
-Node JS module to get domogeek informations through xPL API
-This module stores localy specifics url and it asks the online API every hour
+Node JS layer to execute shell script through xPL API
 
 ## Installation
 
