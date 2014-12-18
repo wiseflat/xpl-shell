@@ -5,8 +5,7 @@
   "main": "./lib/xpl-shell.js",
   "dependencies": {
     "xpl-api": "~1.0.12",
-    "fs": "~0.0.2",
-    "shelljs": "~0.3.0"
+    "fs": "~0.0.2"
   },
   "keywords": [
     "XPL","nodejs","shelljs"
