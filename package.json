@@ -1,0 +1,19 @@
+{
+  "name": "xpl-shell",
+  "version": "0.1.0",
+  "description": "Node JS layer to execute shell script through xPL",
+  "main": "./lib/xpl-shell.js",
+  "dependencies": {
+    "xpl-api": "~1.0.12",
+    "fs": "~0.0.2",
+    "shelljs": "~0.3.0"
+  },
+  "keywords": [
+    "XPL","nodejs","shelljs"
+  ],
+  "repository": { "type": "git", "url": "https://github.com/wiseflat/xpl-shell.git" },
+  "author": "Mathieu Garcia",
+  "license": "GPL",
+  "readmeFilename": "README.md",
+  "homepage": "https://github.com/wiseflat/xpl-shell"
+}
