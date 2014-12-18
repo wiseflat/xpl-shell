@@ -25,7 +25,7 @@ wt._init(function(error, xpl) {
 
         xpl.on("xpl:shell.basic", function(evt) {
 		console.log("Receive message shell.request ", evt);
-                if(evt.headerName == 'xpl-cmnd') wt.sendCommand(evt.body);
+                if(evt.headerName == 'xpl-cmnd' && wt.validBasicSchema(evt.body)) wt.sendCommand(evt.body);
         });
         
 });
