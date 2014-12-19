@@ -14,22 +14,15 @@ wt._init(function(error, xpl) {
         wt.readConfig();
                 
         xpl.on("xpl:shell.config", function(evt) {
-		//console.log("Receive message shell.config ", evt);
                 if(evt.headerName == 'xpl-cmnd' && wt.validConfigSchema(evt.body)) wt.writeConfig(evt.body);
         }); 
 
         xpl.on("xpl:shell.request", function(evt) {
-		//console.log("Receive message shell.request ", evt);
                 if(evt.headerName == 'xpl-cmnd') wt.readConfig();
         });
 
         xpl.on("xpl:shell.basic", function(evt) {
-		//console.log("Receive message shell.request ", evt);
                 if(evt.headerName == 'xpl-cmnd' && wt.validBasicSchema(evt.body)) wt.sendCommand(evt.body);
         });
-        
-        setInterval(function(){
-                wt.readConfig();
-        }, 30 * 1000);
 });
 
