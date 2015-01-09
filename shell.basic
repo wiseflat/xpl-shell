@@ -1,0 +1,4 @@
+[
+    {"label":"touchlog","script":"/bin/echo","parameters":"test > /tmp/test.log"},
+    {"label":"reboot","script":"/sbin/reboot","parameters":""}
+]
