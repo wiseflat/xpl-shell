@@ -2,6 +2,7 @@ var xplshell = require("./lib/xpl-shell");
 
 var wt = new xplshell(null, {
 	//xplSource: 'bnz-shell.wiseflat'
+        xplLog: false
 });
 
 wt.init(function(error, xpl) { 
@@ -21,11 +22,8 @@ wt.init(function(error, xpl) {
                 wt.sendBasic();
         }, 60 * 1000);
 
-        xpl.on("xpl:shell.request", function(evt) {
-                if(evt.headerName == 'xpl-cmnd') wt.sendConfig();
-        });
-
         xpl.on("xpl:shell.basic", function(evt) {
+                console.log(evt);
                 if(evt.headerName == 'xpl-cmnd' && wt.validBasicSchema(evt.body)) wt.sendCommand(evt.body);
         });
         

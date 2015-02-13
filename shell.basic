@@ -1,4 +1,4 @@
 [
-    {"label":"touchlog","script":"/bin/echo","parameters":"test > /tmp/test.log"},
-    {"label":"reboot","script":"/sbin/reboot","parameters":""}
+    {"device":"1","script":"/bin/echo","parameters":"test > /tmp/test.log", "command": "idle"},
+    {"device":"2","script":"/sbin/reboot","parameters":"", "command": "idle"}
 ]
