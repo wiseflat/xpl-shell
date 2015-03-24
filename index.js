@@ -1,8 +1,10 @@
 var xplshell = require("./lib/xpl-shell");
+var schema_shellbasic = require('/etc/wiseflat/schemas/shell.basic.json');
+var schema_shellconfig = require('/etc/wiseflat/schemas/shell.config.json');
 
 var wt = new xplshell(null, {
-	//xplSource: 'bnz-shell.wiseflat'
-        xplLog: false
+        xplLog: false,
+        forceBodySchemaValidation: false
 });
 
 wt.init(function(error, xpl) { 
@@ -12,6 +14,9 @@ wt.init(function(error, xpl) {
 		return;
 	}
         
+	xpl.addBodySchema(schema_shellbasic.id, schema_shellbasic.definitions.body);
+	xpl.addBodySchema(schema_shellconfig.id, schema_shellconfig.definitions.body);
+	
         // Load config file into hash
         wt.readConfig();
         wt.readBasic();
@@ -24,11 +29,11 @@ wt.init(function(error, xpl) {
 
         xpl.on("xpl:shell.basic", function(evt) {
                 console.log(evt);
-                if(evt.headerName == 'xpl-cmnd' && wt.validBasicSchema(evt.body)) wt.sendCommand(evt.body);
+                if(evt.headerName == 'xpl-cmnd') wt.sendCommand(evt.body);
         });
         
         xpl.on("xpl:shell.config", function(evt) {
-                if(evt.headerName == 'xpl-cmnd' && wt.validConfigSchema(evt.body)) wt.writeConfig(evt.body);
+                if(evt.headerName == 'xpl-cmnd') wt.writeConfig(evt.body);
         });
 });
 
