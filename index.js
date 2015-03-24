@@ -28,7 +28,6 @@ wt.init(function(error, xpl) {
         }, 60 * 1000);
 
         xpl.on("xpl:shell.basic", function(evt) {
-                console.log(evt);
                 if(evt.headerName == 'xpl-cmnd') wt.sendCommand(evt.body);
         });
         
