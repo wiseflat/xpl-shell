@@ -1,0 +1,12 @@
+[Unit]
+Description=Wiseflat xPL shell daemon
+After=networking.service
+After=xpl-hub.service
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/node /opt/xpl-shell/index.js
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
