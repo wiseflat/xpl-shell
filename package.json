@@ -4,7 +4,7 @@
   "description": "Node JS layer to execute shell script through xPL",
   "main": "./lib/xpl-shell.js",
   "dependencies": {
-    "xpl-api": "Nodejs-XPL/xpl-api",
+    "xpl-api": "git://github.com/Nodejs-XPL/xpl-api.git#process_target",
     "fs": "~0.0.2"
   },
   "keywords": [

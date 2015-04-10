@@ -28,11 +28,11 @@ wt.init(function(error, xpl) {
         }, 60 * 1000);
 
         xpl.on("xpl:shell.basic", function(evt) {
-                if(evt.headerName == 'xpl-cmnd') wt.sendCommand(evt.body);
+                if(wt.configHash.enable && evt.headerName == 'xpl-cmnd') wt.sendCommand(evt);
         });
         
         xpl.on("xpl:shell.config", function(evt) {
-                if(evt.headerName == 'xpl-cmnd') wt.writeConfig(evt.body);
+                if(evt.headerName == 'xpl-cmnd') wt.writeConfig(evt);
         });
 });
 
