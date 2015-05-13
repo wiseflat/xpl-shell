@@ -1,6 +1,6 @@
 {
   "name": "xpl-shell",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Node JS layer to execute shell script through xPL",
   "main": "./lib/xpl-shell.js",
   "dependencies": {
