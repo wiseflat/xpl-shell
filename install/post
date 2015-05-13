@@ -1,0 +1,1 @@
+cp shell.basic.json shell.config.json /etc/wiseflat
